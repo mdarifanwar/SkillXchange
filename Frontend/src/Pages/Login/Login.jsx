@@ -51,7 +51,7 @@ const Login = () => {
 
     setLoading(true);
     const apiBaseUrl = getApiBaseUrl();
-    const endpoint = isSignup ? "/auth/signup" : "/auth/login";
+    const endpoint = isSignup ? "/api/auth/signup" : "/api/auth/login";
 
     try {
       const res = await fetch(`${apiBaseUrl}${endpoint}`, {
