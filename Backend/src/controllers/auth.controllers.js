@@ -86,8 +86,8 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
     sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   });
 
-  // Redirect to frontend with username as query parameter
-  return res.redirect(`${FRONTEND_URL}/auth/google/callback?username=${user.username}`);
+  // Redirect to frontend dashboard after successful login
+  return res.redirect(`${FRONTEND_URL}/dashboard`);
 });
 
 // ================= LOGOUT =================
