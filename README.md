@@ -127,7 +127,7 @@ To run SkillXchange locally, follow these steps:
 ### Clone the Repo
 
 ```bash
-git clone https://github.com/mdarifanwar/ 
+git clone https://github.com/mdarifanwar/SkillXchange.git 
 cd SkillXchange
 ```
 
