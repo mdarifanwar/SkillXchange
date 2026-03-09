@@ -50,33 +50,33 @@ const Login = () => {
     if (!validateForm()) return;
 
     setLoading(true);
-    const apiBaseUrl = getApiBaseUrl();
-    const endpoint = isSignup ? "/api/auth/signup" : "/api/auth/login";
+    const pt = import.meta.env.VITE_API_BASE_URL;
+    const Bt = isSignup ? "/api/auth/signup" : "/api/auth/login";
 
     try {
-      const res = await fetch(`${apiBaseUrl}${endpoint}`, {
+      const Ft = await fetch(`${pt}${Bt}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
         body: JSON.stringify({ email, password }),
       });
 
-      const contentType = res.headers.get("content-type");
+      const contentType = Ft.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
         toast.error("Server error. Please try again later.");
         setLoading(false);
         return;
       }
-      const data = await res.json();
+      const data = await Ft.json();
 
-      if (!res.ok) {
+      if (!Ft.ok) {
         toast.error(data.message || "Something went wrong");
         setLoading(false);
         return;
       }
 
       // Fetch full user details after login/signup
-      const userRes = await fetch(`${apiBaseUrl}/user/registered/getDetails`, {
+      const userRes = await fetch(`${pt}/user/registered/getDetails`, {
         credentials: "include",
       });
 
