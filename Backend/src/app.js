@@ -53,6 +53,16 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 
 // Importing routes
+// Default root route
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "SkillXChange API is running" });
+});
+
+// Test route
+app.get("/api/test", (req, res) => {
+  res.json({ success: true, message: "API test successful" });
+});
+
 import userRouter from "./routes/user.routes.js";
 import authRouter from "./routes/auth.routes.js";
 import chatRouter from "./routes/chat.routes.js";
@@ -64,15 +74,15 @@ import feedbackRouter from "./routes/feedback.routes.js";
 import videoRouter from "./routes/video.routes.js";
 
 // Using routes
-app.use("/user", userRouter);
-app.use("/auth", authRouter);
-app.use("/chat", chatRouter);
-app.use("/message", messageRouter);
-app.use("/request", requestRouter);
-app.use("/report", reportRouter);
-app.use("/rating", ratingRouter);
-app.use("/feedback", feedbackRouter);
-app.use("/video", videoRouter);
+app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/chat", chatRouter);
+app.use("/api/message", messageRouter);
+app.use("/api/request", requestRouter);
+app.use("/api/report", reportRouter);
+app.use("/api/rating", ratingRouter);
+app.use("/api/feedback", feedbackRouter);
+app.use("/api/video", videoRouter);
 
 // 404 catch-all for unknown routes
 app.use((req, res) => {

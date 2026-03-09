@@ -30,6 +30,11 @@ const forgotPasswordLimiter = rateLimit({
   legacyHeaders: false,
 });
 
+// Default GET for /api/auth (when mounted)
+router.get("/", (req, res) => {
+  res.json({ success: true, message: "Auth route is available. Use POST /api/auth/login or /api/auth/register." });
+});
+
 router.get("/google", googleAuthHandler);
 router.get("/google/callback", googleAuthCallback, handleGoogleLoginCallback);
 router.get("/logout", handleLogout);
