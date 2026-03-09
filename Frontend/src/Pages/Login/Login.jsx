@@ -22,7 +22,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleGoogleLogin = () => {
-    window.location.href = `${getApiBaseUrl()}/auth/google`;
+    window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/auth/google`;
   };
 
   const validateForm = () => {
