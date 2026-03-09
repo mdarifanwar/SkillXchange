@@ -1,0 +1,18 @@
+# Node
+node_modules/
+.env
+public/temp/
+dist/
+build/
+.DS_Store
+*.log
+npm-debug.log*
+
+# OS
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/

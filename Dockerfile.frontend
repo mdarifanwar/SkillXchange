@@ -1,0 +1,41 @@
+# Use an official Node.js runtime as a base image (npm is included in this image)
+FROM node:20
+
+# fetch the latest version of the package lists
+RUN apt-get update
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the contents of the Frontend directory
+COPY Frontend/ /app/Frontend
+
+WORKDIR /app/Frontend
+
+# Remove node_modules and .env files from the Frontend directory if they exist
+RUN rm -rf node_modules .env
+
+# Install Node.js dependencies in the container app directory
+RUN npm install
+
+ARG VITE_LOCALHOST
+ARG VITE_SERVER_URL
+ARG VITE_ZEGO_APP_ID
+
+#write the environment variables to a .env file
+RUN echo "VITE_LOCALHOST=${VITE_LOCALHOST}" > .env \
+    && echo "VITE_SERVER_URL=${VITE_SERVER_URL}" >> .env \
+    && echo "VITE_ZEGO_APP_ID=${VITE_ZEGO_APP_ID}" >> .env
+
+RUN cat .env
+
+# Build for production
+RUN npm run build
+
+# Install a lightweight static server
+RUN npm install -g serve
+
+EXPOSE 5173
+
+# Serve the production build
+CMD ["serve", "-s", "dist", "-l", "5173"]

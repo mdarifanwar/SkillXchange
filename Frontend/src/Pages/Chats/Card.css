@@ -1,0 +1,146 @@
+/* Frontend/src/Pages/Chats/Card.css ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Clean SaaS style */
+
+.card-container {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #F0D060;
+    color: #2D2D2D;
+    width: min(300px, 100%);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-body, "Inter", system-ui, sans-serif);
+}
+
+[data-theme="dark"] .card-container {
+    background: #2a2a2a;
+    border-color: #444444;
+    color: #f3f4f6;
+}
+
+.img-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #F0D060;
+    margin-bottom: 1rem;
+    background: #F0ECC8;
+}
+
+[data-theme="dark"] .img-container {
+    border-color: #444444;
+    background: #3a3a3a;
+}
+
+.card-container h3 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    color: #2D2D2D;
+    font-size: 1.125rem;
+}
+
+[data-theme="dark"] .card-container h3 {
+    color: #f3f4f6;
+}
+
+.card-container h6 {
+    margin: 0.25rem 0 0.75rem 0;
+    color: #6b7280;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.card-container p {
+    color: #6b7280;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.prof-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.primary.ghost {
+    background: transparent;
+    color: #2D2D2D;
+    border: 1px solid #F0D060;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.primary.ghost:hover {
+    background: #F0ECC8;
+    border-color: #D4B840;
+}
+
+[data-theme="dark"] .primary.ghost {
+    color: #f3f4f6;
+    border-color: #555555;
+}
+
+[data-theme="dark"] .primary.ghost:hover {
+    background: #3a3a3a;
+}
+
+.profskills {
+    width: 100%;
+    text-align: left;
+}
+
+.profskills h6 {
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.profskill-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.profskill-box {
+    background: #F0ECC8;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #3D3D3D;
+    font-weight: 500;
+    border: 1px solid #F0D060;
+}
+
+[data-theme="dark"] .profskill-box {
+    background: #3a3a3a;
+    color: #d1d5db;
+    border-color: #555555;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .card-container {
+    padding: 1.25rem;
+  }
+
+  .img-container {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-container h3 {
+    font-size: 1rem;
+  }
+}
