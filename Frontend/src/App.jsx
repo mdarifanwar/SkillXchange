@@ -53,19 +53,37 @@ const App = () => {
           socketRef.current.emit("setup", user);
       }
 
+      if ("Notification" in window && Notification.permission === "default") {
+        Notification.requestPermission().catch(() => {});
+      }
+
       // Listen for Notifications
       const handleMessageReceived = (newMessage) => {
         // Check if we are on the chats page (or sub-routes if any)
-        if (!window.location.pathname.startsWith("/chats")) {
-           const senderName = newMessage.sender?.name || "Someone";
-           // Truncate message
-           let content = newMessage.content || "Sent a message";
-           if (content.length > 30) content = content.substring(0, 30) + "...";
-           
-           toast.info(`New message from ${senderName}: ${content}`, {
-               onClick: () => { window.location.href = "/chats"; },
-               autoClose: 5000
-           });
+        const senderName = newMessage.sender?.name || "Someone";
+        let content = newMessage.content || "Sent a message";
+        if (content.length > 30) content = content.substring(0, 30) + "...";
+
+        const isChatsRoute = window.location.pathname.startsWith("/chats");
+        const shouldToast = !isChatsRoute;
+
+        if (shouldToast) {
+          toast.info(`New message from ${senderName}: ${content}`, {
+            onClick: () => { window.location.href = "/chats"; },
+            autoClose: 5000
+          });
+        }
+
+        if ("Notification" in window && Notification.permission === "granted") {
+          if (document.visibilityState === "hidden" || shouldToast) {
+            const notification = new Notification("New message", {
+              body: `${senderName}: ${content}`,
+              icon: newMessage.sender?.picture || "/assets/images/user.png",
+            });
+            notification.onclick = () => {
+              window.location.href = "/chats";
+            };
+          }
         }
       };
       
