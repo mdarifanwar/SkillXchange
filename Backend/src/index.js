@@ -26,8 +26,9 @@ connectDB()
     const allowedOrigins = [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://your-frontend.vercel.app",
-    ];
+      process.env.CLIENT_URL,
+      process.env.FRONTEND_URL,
+    ].filter(Boolean);
 
     const io = new Server(server, {
       pingTimeout: 60000,

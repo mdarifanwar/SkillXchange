@@ -11,7 +11,10 @@ import crypto from "crypto";
 import { sendMail } from "../utils/SendMail.js";
 
 dotenv.config();
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const FRONTEND_URL =
+  process.env.CLIENT_URL ||
+  process.env.FRONTEND_URL ||
+  "http://localhost:5173";
 const isProduction = process.env.NODE_ENV === "production";
 
 const authCookieOptions = {
