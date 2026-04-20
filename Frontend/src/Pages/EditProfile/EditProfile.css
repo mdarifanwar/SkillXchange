@@ -1,0 +1,450 @@
+/* EditProfile ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Clean SaaS */
+.register_page {
+  min-height: 90vh;
+  background-color: transparent;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 48px 20px;
+}
+
+.page-title {
+  color: var(--text-main);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.register_section {
+  background: var(--bg-card);
+  color: var(--text-main);
+  min-height: auto;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid var(--border-color);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.previewForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .register_section {
+    width: 100%;
+    padding: 20px;
+    max-width: none;
+  }
+  .register_page { padding: 32px 15px; }
+  .link { display: flex; justify-content: center; flex-direction: column; margin-left: 0 !important; }
+  .col-md-6 { padding: 0 !important; }
+  .register_section .btn.w-50 { max-width: none; margin: 15px 0; }
+  .register_section label { margin-top: 12px; }
+  .nav-tabs .nav-link { padding: 8px 14px; font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .register_page {
+    padding: 20px 8px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .register_section {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .nav-tabs {
+    margin-bottom: 20px;
+  }
+
+  .nav-tabs .nav-link {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .col-md-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .register_section .btn-primary,
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .register_section .btn.w-50 {
+    max-width: none;
+    width: 100% !important;
+  }
+}
+
+.previewContainer {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.previewItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 10px;
+  background: var(--bg-hover);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.previewLabel {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.previewValue {
+  flex: 2;
+  margin-left: 16px;
+  color: var(--text-main);
+}
+
+/* Form Controls */
+.register_section input[type="text"],
+.register_section input[type="email"],
+.register_section input[type="number"],
+.register_section input[type="date"],
+.register_section textarea,
+.register_section select,
+.form-control {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  transition: border-color 0.15s;
+}
+
+.register_section input[type="text"]:focus,
+.register_section input[type="email"]:focus,
+.register_section input[type="number"]:focus,
+.register_section input[type="date"]:focus,
+.register_section textarea:focus,
+.register_section select:focus,
+.form-control:focus {
+  background-color: var(--bg-card) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(178, 34, 52, 0.1) !important;
+  outline: none;
+}
+
+.register_section input::placeholder,
+.register_section textarea::placeholder,
+.form-control::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+.register_section select option {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+.register_section label {
+  color: var(--text-main);
+  font-weight: 500;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+/* Form Groups */
+.form-group { margin-bottom: 20px; }
+.row { margin-left: -15px !important; margin-right: -15px !important; }
+.col-md-6 { padding-left: 15px !important; padding-right: 15px !important; }
+.register_section .col-md-6 > label { margin-top: 0; }
+
+/* Tab Styling */
+.nav-tabs {
+  border-bottom: 1px solid var(--border-color);
+  gap: 0;
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-secondary);
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+
+.register_section select,
+.register_section .form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 42px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%236b7280' d='M4.47 6.47a.75.75 0 0 1 1.06 0L8 8.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 10.53a.75.75 0 0 1-1.06 0L4.47 7.53a.75.75 0 0 1 0-1.06z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 16px 16px !important;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--accent);
+  background: transparent;
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.tab-content { padding: 0; }
+
+.tab-pane {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button Styling */
+.register_section .btn-primary,
+.btn-primary {
+  background: #2D2D2D;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.register_section .btn-primary:hover,
+.btn-primary:hover {
+  background: #1a1a1a;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.register_section .btn-primary:active,
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary buttons */
+.btn-secondary,
+.register_section .btn-secondary {
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover,
+.register_section .btn-secondary:hover {
+  background: var(--bg-primary);
+}
+
+/* Add Skill/Project Button */
+.register_section button:not(.btn-primary):not(.btn-secondary),
+.btn-outline-secondary {
+  background: #f8f6ee;
+  border: 1.5px solid #d4c97a;
+  color: #5a5330;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.register_section button:not(.btn-primary):not(.btn-secondary):hover,
+.btn-outline-secondary:hover {
+  background: #F0ECC8;
+  border-color: #c4b84e;
+}
+
+/* Full width button styling */
+.register_section .btn.w-50 {
+  margin: 16px auto;
+  width: 100% !important;
+  max-width: 200px;
+}
+
+.register_section .my-2 button {
+  width: 100% !important;
+  max-width: none;
+}
+
+/* Button Groups */
+.d-flex button { margin: 0 8px; }
+
+.register_section .row.d-flex.justify-content-center {
+  margin-top: 24px;
+  gap: 12px;
+}
+
+/* Badge/Chip Styling */
+.badge {
+  background: var(--bg-hover);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 4px 4px 4px 0;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge:hover {
+  background: var(--bg-primary);
+}
+
+.badge .badge-close {
+  cursor: pointer;
+}
+
+.badge .badge-close:hover {
+  color: #ef4444;
+}
+
+/* File Input */
+.register_section input[type="file"] {
+  width: 100%;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  transition: border-color 0.15s;
+}
+
+.register_section input[type="file"]::file-selector-button {
+  background: var(--bg-hover);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register_section input[type="file"]::file-selector-button:hover {
+  background: var(--bg-primary);
+}
+
+.register_section input[type="file"]:focus,
+.register_section input[type="file"]:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Improved Input Styling */
+.register_section input,
+.register_section textarea,
+.register_section select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Headings and Typography */
+.register_section h1,
+.register_section h2,
+.register_section h3,
+.register_section h4,
+.register_section h5,
+.register_section h6 {
+  color: var(--text-main);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* Divider/Spacing */
+.register_section hr {
+  border-color: var(--border-color);
+  margin: 20px 0;
+}
+
+/* Disabled State */
+.register_section input:disabled,
+.register_section textarea:disabled,
+.register_section select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Helper Text */
+.register_section .form-text {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Error State */
+.register_section .is-invalid {
+  border-color: #ef4444 !important;
+}
+
+.register_section .invalid-feedback {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+

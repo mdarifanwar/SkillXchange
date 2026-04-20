@@ -1,0 +1,140 @@
+/* AboutUs — Clean SaaS */
+.about-us-section {
+  padding: 64px 20px;
+  background-color: transparent;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.about-text p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.about-image-frame {
+  background: var(--bg-hover);
+  padding: 0.75rem;
+  border-radius: 10px;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+}
+
+.about-image-container {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-image {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  display: block;
+}
+
+.about-image-frame:hover .about-hero-image {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column-reverse;
+    gap: 32px;
+    text-align: center;
+  }
+  .about-title { font-size: 2rem; }
+  .about-title::after { left: 50%; transform: translateX(-50%); }
+  .about-text p { text-align: center; }
+  .about-image-container { margin-bottom: 16px; }
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 40px 16px;
+  }
+
+  .about-container {
+    padding: 1.5rem;
+    gap: 24px;
+  }
+
+  .about-content {
+    min-width: 0;
+  }
+
+  .about-image-container {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 24px 10px;
+  }
+
+  .about-container {
+    padding: 1.25rem;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about-hero-image {
+    max-width: 240px;
+  }
+}
+
+

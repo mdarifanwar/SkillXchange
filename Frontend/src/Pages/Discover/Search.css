@@ -1,0 +1,74 @@
+/* Search — Clean SaaS */
+.search-bar {
+  transform: translateY(-50%);
+  width: 80%;
+  left: 0 !important;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  transition: width 0.2s, border-color 0.2s;
+}
+
+.search-bar.active {
+  width: 90%;
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+
+.search-bar:hover .search-icon {
+  color: var(--text-main);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 95%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-bar.active {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    width: calc(100% - 16px);
+    padding: 6px 12px;
+  }
+
+  .search-bar.active {
+    width: calc(100% - 16px);
+  }
+
+  .search-bar input {
+    font-size: 13px;
+  }
+}
+
