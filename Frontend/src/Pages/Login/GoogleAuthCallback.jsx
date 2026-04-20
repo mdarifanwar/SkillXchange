@@ -11,41 +11,50 @@ export default function GoogleAuthCallback() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const usernameFromQuery = params.get("username");
+    let cancelled = false;
 
-    // Wait a moment for the cookie to be set by the backend, then check if user is authenticated
-    const timer = setTimeout(() => {
-      // Try to fetch the current user
+    const redirectWithFallback = () => {
+      if (usernameFromQuery) {
+        const minimalUser = { username: usernameFromQuery };
+        setUser(minimalUser);
+        localStorage.setItem("userInfo", JSON.stringify(minimalUser));
+        navigate(`/profile/${usernameFromQuery}`);
+        return;
+      }
+      navigate("/login");
+    };
+
+    const attemptAuthCheck = (attempt) => {
       axios
         .get("/user/getDetails", { withCredentials: true })
         .then((res) => {
-          if (res.data?.data && res.data.data.username) {
-            // User authenticated, set context and persist to localStorage
+          if (cancelled) return;
+          if (res.data?.data?.username) {
             setUser(res.data.data);
             localStorage.setItem("userInfo", JSON.stringify(res.data.data));
             navigate(`/profile/${res.data.data.username}`);
-          } else if (usernameFromQuery) {
-            const minimalUser = { username: usernameFromQuery };
-            setUser(minimalUser);
-            localStorage.setItem("userInfo", JSON.stringify(minimalUser));
-            navigate(`/profile/${usernameFromQuery}`);
           } else {
-            navigate("/login");
+            redirectWithFallback();
           }
         })
         .catch((err) => {
-          console.error("Auth check failed:", err);
-          if (usernameFromQuery) {
-            const minimalUser = { username: usernameFromQuery };
-            setUser(minimalUser);
-            localStorage.setItem("userInfo", JSON.stringify(minimalUser));
-            navigate(`/profile/${usernameFromQuery}`);
+          if (cancelled) return;
+          // Mobile browsers can delay cookie availability; retry a few times.
+          if (attempt < 3) {
+            setTimeout(() => attemptAuthCheck(attempt + 1), 700);
             return;
           }
-          navigate("/login");
+          console.error("Auth check failed:", err);
+          redirectWithFallback();
         });
-    }, 500); // Small delay to ensure cookie is set
+    };
 
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => attemptAuthCheck(0), 500);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
   }, [navigate, setUser]);
 
   return <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>Logging you in with Google...</div>;

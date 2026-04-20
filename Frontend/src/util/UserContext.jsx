@@ -20,6 +20,7 @@ const UserContextProvider = ({ children }) => {
         "/register",
         "/discover",
         "/reset-password",
+        "/auth/google/callback",
       ];
       
       const storedUser = localStorage.getItem("userInfo");
