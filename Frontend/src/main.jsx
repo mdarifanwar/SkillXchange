@@ -9,6 +9,11 @@ import { UserContextProvider } from "./util/UserContext.jsx";
 axios.defaults.baseURL = `${import.meta.env.VITE_API_URL}/api`;
 axios.defaults.withCredentials = true;
 
+const storedToken = localStorage.getItem("authToken");
+if (storedToken) {
+  axios.defaults.headers.common.Authorization = `Bearer ${storedToken}`;
+}
+
 axios.interceptors.response.use(
   (response) => response,
   (error) => {

@@ -97,8 +97,11 @@ export const handleGoogleLoginCallback = asyncHandler(async (req, res) => {
     expires: expiryDate,
   });
 
-  // Redirect to frontend with username as query parameter
-  return res.redirect(`${FRONTEND_URL}/auth/google/callback?username=${user.username}`);
+  // Redirect to frontend with username and token so mobile can use Authorization header
+  const callbackUrl = new URL(`${FRONTEND_URL}/auth/google/callback`);
+  callbackUrl.searchParams.set("username", user.username);
+  callbackUrl.searchParams.set("token", jwtToken);
+  return res.redirect(callbackUrl.toString());
 });
 
 // ================= LOGOUT =================

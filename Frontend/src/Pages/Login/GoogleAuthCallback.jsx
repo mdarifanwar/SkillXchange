@@ -11,7 +11,13 @@ export default function GoogleAuthCallback() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const usernameFromQuery = params.get("username");
+    const tokenFromQuery = params.get("token");
     let cancelled = false;
+
+    if (tokenFromQuery) {
+      localStorage.setItem("authToken", tokenFromQuery);
+      axios.defaults.headers.common.Authorization = `Bearer ${tokenFromQuery}`;
+    }
 
     const redirectWithFallback = () => {
       if (usernameFromQuery) {
