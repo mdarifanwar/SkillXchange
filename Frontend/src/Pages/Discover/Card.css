@@ -8,6 +8,7 @@
   border: 1px solid var(--border-color);
   color: var(--text-main);
   min-height: 320px;
+  width: 100%;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -205,6 +206,7 @@
   .card-container {
     border-radius: 12px;
     min-height: 0;
+    width: 100%;
   }
 
   .card-top {
