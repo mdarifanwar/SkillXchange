@@ -20,8 +20,10 @@ app.use((req, res, next) => {
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://your-frontend.vercel.app",
-];
+  "http://localhost:5174",
+  process.env.CLIENT_URL,
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 app.use(
   cors({
