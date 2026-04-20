@@ -162,4 +162,6 @@ https://github.com/mdarifanwar/SkillXchange
 
 ## License
 
-MIT
+Copyright (c) 2026 Md Arif Ansari. All Rights Reserved.
+
+Unauthorized copying, distribution, modification, or use of this software, via any medium, is strictly prohibited without the express written permission of the copyright holder.
