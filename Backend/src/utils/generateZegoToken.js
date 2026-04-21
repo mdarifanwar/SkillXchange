@@ -13,6 +13,16 @@ function aesEncrypt(plainText, key, iv) {
   return encrypted;
 }
 
+function deriveSecretKey(secret) {
+  const trimmed = (secret || "").trim();
+  const isHex = /^[0-9a-fA-F]+$/.test(trimmed) && trimmed.length % 2 === 0;
+  const raw = isHex ? Buffer.from(trimmed, "hex") : Buffer.from(trimmed, "utf8");
+
+  const keyBuf = Buffer.alloc(32);
+  raw.copy(keyBuf, 0, 0, Math.min(raw.length, 32));
+  return keyBuf;
+}
+
 /**
  * Generates a ZegoCloud "04" token on the server side.
  * This keeps the serverSecret safe from client exposure.
@@ -36,13 +46,9 @@ export function generateZegoToken(appId, secret, roomId, userId, userName) {
     payload: payload,
   };
 
-  const plaintextBuf = Buffer.from(JSON.stringify(tokenInfo));
+  const plaintextBuf = Buffer.from(JSON.stringify(tokenInfo), "utf8");
   const iv = crypto.randomBytes(16);
-  const secretBuf = Buffer.from(secret);
-
-  // Ensure 32-byte key for AES-256
-  const keyBuf = Buffer.alloc(32);
-  secretBuf.copy(keyBuf, 0, 0, Math.min(secretBuf.length, 32));
+  const keyBuf = deriveSecretKey(secret);
 
   const encryptBuf = aesEncrypt(plaintextBuf, keyBuf, iv);
 
