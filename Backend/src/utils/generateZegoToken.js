@@ -2,7 +2,7 @@ import crypto from "crypto";
 
 function makeNonce() {
   // Zego expects a non-negative nonce value.
-  return crypto.randomBytes(4).readUInt32BE();
+  return crypto.randomBytes(4).readUInt32LE();
 }
 
 function aesEncrypt(plainText, key, iv) {
@@ -50,16 +50,16 @@ export function generateZegoToken(appId, secret, roomId, userId, userName) {
   const b = Buffer.alloc(4 + 2 + iv.length + 4 + encryptBuf.length);
   let offset = 0;
 
-  b.writeInt32BE(expireTime, offset);
+  b.writeUInt32LE(expireTime, offset);
   offset += 4;
 
-  b.writeInt16BE(iv.length, offset);
+  b.writeUInt16LE(iv.length, offset);
   offset += 2;
 
   iv.copy(b, offset);
   offset += iv.length;
 
-  b.writeInt32BE(encryptBuf.length, offset);
+  b.writeUInt32LE(encryptBuf.length, offset);
   offset += 4;
 
   encryptBuf.copy(b, offset);
