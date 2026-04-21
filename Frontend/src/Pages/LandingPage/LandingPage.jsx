@@ -101,135 +101,141 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="features" className="section features-section container">
-        <h2 className="section-title">WHY SKILLXCHANGE?</h2>
-        
-        <div className="features-grid">
-          <FeatureCard 
-            icon={<FaGraduationCap />}
-            title="Learn From Real Work"
-            description="Stop collecting tutorials. Solve real challenges, get feedback, and grow faster with hands-on practice."
-          />
-          <FeatureCard 
-            icon={<FaChalkboardTeacher />}
-            title="Teach What You Know"
-            description="Offer your skills, help others, and earn SkillCoins that power your next learning step."
-          />
+        <div className="hero-scroll-hint">
+          <span>Scroll to see how it works</span>
+          <div className="hero-scroll-dot" />
         </div>
       </section>
 
-      <section id="how-it-works" className="section how-section">
-        <div className="section-header">
-          <h2 className="section-title">HOW IT WORKS</h2>
-          <p className="section-subtitle">
-            A simple loop that turns skills into opportunities.
-          </p>
-        </div>
-        <div className="steps-grid">
-          <div className="step-card">
-            <span className="step-number">01</span>
-            <h3>Offer or learn skills</h3>
-            <p>Post what you can teach or what you want to learn. Match with people who fit.</p>
+      <div className="home-sections">
+        <section id="features" className="section features-section container">
+          <h2 className="section-title">WHY SKILLXCHANGE?</h2>
+          
+          <div className="features-grid">
+            <FeatureCard 
+              icon={<FaGraduationCap />}
+              title="Learn From Real Work"
+              description="Stop collecting tutorials. Solve real challenges, get feedback, and grow faster with hands-on practice."
+            />
+            <FeatureCard 
+              icon={<FaChalkboardTeacher />}
+              title="Teach What You Know"
+              description="Offer your skills, help others, and earn SkillCoins that power your next learning step."
+            />
           </div>
-          <div className="step-card">
-            <span className="step-number">02</span>
-            <h3>Complete tasks or challenges</h3>
-            <p>Do real work. Solve a challenge, ship a mini project, or help someone finish theirs.</p>
-          </div>
-          <div className="step-card">
-            <span className="step-number">03</span>
-            <h3>Earn SkillCoins</h3>
-            <p>Every contribution earns coins that unlock better challenges and more visibility.</p>
-          </div>
-          <div className="step-card">
-            <span className="step-number">04</span>
-            <h3>Build your portfolio</h3>
-            <p>Your work history becomes proof of skill. Share it with clients, recruiters, and peers.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section growth-section">
-        <div className="section-header">
-          <h2 className="section-title">GROWTH JOURNEY</h2>
-          <p className="section-subtitle">
-            Level up with badges, milestones, and real proof of progress.
-          </p>
-        </div>
-        <div className="growth-track">
-          <div className="growth-card">
-            <span className="growth-level">Beginner</span>
-            <p>Complete your first challenges and earn your first SkillCoins.</p>
-            <div className="growth-badges">
-              <span className="badge">Starter</span>
-              <span className="badge">First Task</span>
+        <section id="how-it-works" className="section how-section">
+          <div className="section-header">
+            <h2 className="section-title">HOW IT WORKS</h2>
+            <p className="section-subtitle">
+              A simple loop that turns skills into opportunities.
+            </p>
+          </div>
+          <div className="steps-grid">
+            <div className="step-card">
+              <span className="step-number">01</span>
+              <h3>Offer or learn skills</h3>
+              <p>Post what you can teach or what you want to learn. Match with people who fit.</p>
+            </div>
+            <div className="step-card">
+              <span className="step-number">02</span>
+              <h3>Complete tasks or challenges</h3>
+              <p>Do real work. Solve a challenge, ship a mini project, or help someone finish theirs.</p>
+            </div>
+            <div className="step-card">
+              <span className="step-number">03</span>
+              <h3>Earn SkillCoins</h3>
+              <p>Every contribution earns coins that unlock better challenges and more visibility.</p>
+            </div>
+            <div className="step-card">
+              <span className="step-number">04</span>
+              <h3>Build your portfolio</h3>
+              <p>Your work history becomes proof of skill. Share it with clients, recruiters, and peers.</p>
             </div>
           </div>
-          <div className="growth-card">
-            <span className="growth-level">Intermediate</span>
-            <p>Consistent work, stronger reviews, and higher value tasks.</p>
-            <div className="growth-badges">
-              <span className="badge">Mentor</span>
-              <span className="badge">Trusted</span>
+        </section>
+
+        <section className="section growth-section">
+          <div className="section-header">
+            <h2 className="section-title">GROWTH JOURNEY</h2>
+            <p className="section-subtitle">
+              Level up with badges, milestones, and real proof of progress.
+            </p>
+          </div>
+          <div className="growth-track">
+            <div className="growth-card">
+              <span className="growth-level">Beginner</span>
+              <p>Complete your first challenges and earn your first SkillCoins.</p>
+              <div className="growth-badges">
+                <span className="badge">Starter</span>
+                <span className="badge">First Task</span>
+              </div>
+            </div>
+            <div className="growth-card">
+              <span className="growth-level">Intermediate</span>
+              <p>Consistent work, stronger reviews, and higher value tasks.</p>
+              <div className="growth-badges">
+                <span className="badge">Mentor</span>
+                <span className="badge">Trusted</span>
+              </div>
+            </div>
+            <div className="growth-card">
+              <span className="growth-level">Expert</span>
+              <p>Top tier challenges, premium visibility, and verified expertise.</p>
+              <div className="growth-badges">
+                <span className="badge">Pro</span>
+                <span className="badge">Top Talent</span>
+              </div>
             </div>
           </div>
-          <div className="growth-card">
-            <span className="growth-level">Expert</span>
-            <p>Top tier challenges, premium visibility, and verified expertise.</p>
-            <div className="growth-badges">
-              <span className="badge">Pro</span>
-              <span className="badge">Top Talent</span>
+        </section>
+
+        <section className="section why-section">
+          <div className="section-header">
+            <h2 className="section-title">WHY STAY HERE</h2>
+          </div>
+          <div className="why-grid">
+            <div className="why-card">
+              <h3>Real-world skill building</h3>
+              <p>Learn by solving real problems, not just watching videos.</p>
+            </div>
+            <div className="why-card">
+              <h3>Portfolio that proves it</h3>
+              <p>Every task becomes a shareable proof of what you can do.</p>
+            </div>
+            <div className="why-card">
+              <h3>Community learning</h3>
+              <p>Get feedback, collaborate, and grow faster with peers.</p>
+            </div>
+            <div className="why-card">
+              <h3>Future opportunities</h3>
+              <p>Stronger profiles unlock better challenges and career leads.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section why-section">
-        <div className="section-header">
-          <h2 className="section-title">WHY STAY HERE</h2>
-        </div>
-        <div className="why-grid">
-          <div className="why-card">
-            <h3>Real-world skill building</h3>
-            <p>Learn by solving real problems, not just watching videos.</p>
+        <section className="section utility-section">
+          <div className="section-header">
+            <h2 className="section-title">SKILLCOINS UTILITY</h2>
+            <p className="section-subtitle">Turn effort into access.</p>
           </div>
-          <div className="why-card">
-            <h3>Portfolio that proves it</h3>
-            <p>Every task becomes a shareable proof of what you can do.</p>
+          <div className="utility-grid">
+            <div className="utility-card">
+              <h3>Unlock features</h3>
+              <p>Open advanced tools, mentor sessions, and premium rooms.</p>
+            </div>
+            <div className="utility-card">
+              <h3>Access better challenges</h3>
+              <p>Use coins to join higher-value tasks and tougher projects.</p>
+            </div>
+            <div className="utility-card">
+              <h3>Boost visibility</h3>
+              <p>Promote your profile so more people discover your skills.</p>
+            </div>
           </div>
-          <div className="why-card">
-            <h3>Community learning</h3>
-            <p>Get feedback, collaborate, and grow faster with peers.</p>
-          </div>
-          <div className="why-card">
-            <h3>Future opportunities</h3>
-            <p>Stronger profiles unlock better challenges and career leads.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section utility-section">
-        <div className="section-header">
-          <h2 className="section-title">SKILLCOINS UTILITY</h2>
-          <p className="section-subtitle">Turn effort into access.</p>
-        </div>
-        <div className="utility-grid">
-          <div className="utility-card">
-            <h3>Unlock features</h3>
-            <p>Open advanced tools, mentor sessions, and premium rooms.</p>
-          </div>
-          <div className="utility-card">
-            <h3>Access better challenges</h3>
-            <p>Use coins to join higher-value tasks and tougher projects.</p>
-          </div>
-          <div className="utility-card">
-            <h3>Boost visibility</h3>
-            <p>Promote your profile so more people discover your skills.</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

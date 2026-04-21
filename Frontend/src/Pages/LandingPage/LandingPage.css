@@ -102,6 +102,33 @@
   animation: fadeInUp 0.7s ease-out;
 }
 
+.hero-scroll-hint {
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-scroll-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(195, 17, 12, 0.12);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.home-sections {
+  background: var(--bg-primary);
+}
+
 /* Title */
 .hero-title {
   font-family: 'Poppins', sans-serif;
@@ -412,6 +439,11 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
 @media (max-width: 768px) {
   .hero-title { font-size: 2.8rem; letter-spacing: -0.5px; }
   .hero-tagline { font-size: 0.85rem; letter-spacing: 2px; }
@@ -425,6 +457,9 @@
     max-width: 280px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .hero-scroll-hint {
+    margin-top: 2rem;
   }
   .hero-micro {
     grid-template-columns: 1fr;
