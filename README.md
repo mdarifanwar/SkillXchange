@@ -160,6 +160,13 @@ The repo includes Dockerfiles for frontend and backend. If you use Docker, set e
 
 https://github.com/mdarifanwar/SkillXchange
 
+## Author
+
+**Md Arif Ansari**
+
+- GitHub: https://github.com/mdarifanwar
+- LinkedIn: https://linkedin.com/in/your-profile
+
 ## License
 
 Copyright (c) 2026 Md Arif Ansari. All Rights Reserved.
