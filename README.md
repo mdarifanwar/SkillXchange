@@ -165,7 +165,6 @@ https://github.com/mdarifanwar/SkillXchange
 **Md Arif Ansari**
 
 - GitHub: https://github.com/mdarifanwar
-- LinkedIn: https://linkedin.com/in/your-profile
 
 ## License
 
